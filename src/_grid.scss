@@ -1,0 +1,46 @@
+/**
+ * @name Grid
+ *
+ * @description
+ * 
+ * The grid implementation used in pi applications.
+ * Classes related with this may be found in responsive.sass
+ *
+ * This grid implementation was based on a tutsplus tutorial
+ * @url http://webdesign.tutsplus.com/tutorials/a-simple-responsive-grid-made-even-better-with-sass--cms-21540
+ */
+
+
+/*
+ * Pi is mobile first, so 100% is applied to mobiles and largers screens are modified
+ */
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/*
+ * All rows elements contain columns, even it's a button instead of a regular div
+ * This rule is applied to clear classes and wrapper 
+ */
+.wrapper:after,
+.row:after {
+      content: "";
+      display: table;
+      clear: both; 
+      }
+
+/*
+ * All columns have a padding of 1 to form the gutter and some vertical space
+ */
+[class*='column-'] {
+	float: left;
+	padding: 1em;
+	width: 100%;
+	min-height: 1px; /* in cases when the column doesn't have any content, don't ask how but it's covered */
+}
+
+.wrapper,
+.row {
+    @extend %clearfix;
+}
