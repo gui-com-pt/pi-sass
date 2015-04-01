@@ -1,343 +1,82 @@
 // ### DROP DOWN ###
 %pi-nav {
-  @include clearfix;
-  background-color: $pi-nav-bg;
 
-  ul {
-    margin: 0;
-    padding: 0;
-  }
+background-color: $pi-nav-bg;
+ ul
+{
+  list-style:none;
+  position:relative;
+  float:left;
+  margin:0;
+  padding:0
+}
+li {
+font-size: $font-size;
 
-  li {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    float: left;
-    margin-right: $pi-nav-menu-item-spacing; // spacing between nav items
-    font-size: $font-size;
+line-height: $line-height;
+}
+ul a
+{
+  display:block;
+  text-decoration:none;
+  color: #ffffff;
 
-    line-height: $line-height;
+  padding:0 15px;
 
-    // how items with sub-menus appear when showing subs, most likely same as normal hover
-    &.nav-dropdown:hover > a {
-      background-color: $pi-nav-menu-hover-bg !important;
-      color: $pi-nav-menu-hover-color;
-    }
-
-    // top level items
-    a {
-      background-color: $pi-nav-menu-bg;
-      color: $pi-nav-menu-color;
-      font-family: $pi-nav-menu-font;
-      text-decoration: none;
-      display: block;
-      padding: $padding;
-      -webkit-tap-highlight-color: transparent;
-
-      // nav-path-selected and nav-selected are classes to indicate current site location
-      &.nav-path-selected, &.linkclicked {
-        color: white;
-        background-color: $pi-nav-menu-bg;
-      }
-
-      &.nav-selected {
-        background-color: $pi-nav-menu-selected-bg;
-        color: $pi-nav-menu-selected-color;
-      }
-
-      &:hover {
-        background-color: $pi-nav-menu-hover-bg !important;
-        color: $pi-nav-menu-hover-color;
-      }
-    }
-
-    &.clicked > ul {  // used for JS/touch trigger
-      display: block;
-    }
-
-    &.pi-nav__brand {
-      max-height: 40px;
-      line-height: normal;
-
-      a {
-        padding: 0;
-        background-color: transparent;
-
-        img {
-          max-height: $line-height + $padding * 2;
-        }
-      }
-    }
-
-    // second level drop downs
-    ul {
-      display: none;
-      position: absolute;
-      min-width: $sub-min-width;
-      max-width: $sub-max-width;
-      padding: 0;
-      margin: 0;
-
-      a {
-        background-color: darken($pi-nav-menu-bg, 5%);
-      }
-
-      li {
-        float: none;
-        margin: 0;
-      }
-
-      // third level drop downs, expand to the right
-      ul {
-        left: 100%;
-        margin-top: -($line-height + 2*$padding);
-
-        a {
-          background-color: darken($pi-nav-menu-bg, 10%);
-        }
-      }
-    }
-
-  }
-
-  .nav-dropdown:hover > a, .nav-dropdown.clicked > a   {
-    background-color: $pi-nav-menu-bg;
-  }
-
-  @if $showindicators {
-    .nav-dropdown > a:after {
-      content: '▼' !important;
-      font-size: 10px;
-      float: right;
-      margin-left: 10px;
-      color: $drop-indicators-color;
-    }
-
-    .nav-dropdown:hover > a:after {
-      content: '▲' !important;
-      font-size: 10px;
-      float: right;
-      margin-left: 10px;
-      color: $drop-indicators-color;
-    }
+  &:hover {
+    color: $color-primary;
   }
 }
 
-// non javascript expand of menu on hover (fallback)
-.no-js .pi-nav {
-  li {
-    &:hover > ul {
-      display: block !important;
-    }
-  }
+ ul li
+{
+  position:relative;
+  float:left;
+  margin:0;
+  padding:0
 }
 
+ul li.current-menu-item
+{
 
-// default of mobile menu button, needed for javascript to detect if visible
-.menu-icon {
-  display: none;
 }
 
+ ul li:hover
+{
 
-// ### MOBILE NAV AND MENU BUTTON ###
-@media #{$phones} {
-  .menu-icon {
-    width:  30px;
-    height: 25px;
-    padding-top:  0;
-    margin-top: 10px;
-    display: block;
-    float: right;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    background-color: $button-back;
-    padding: 5px;
-    padding-top: 1px;
-    padding-bottom: 12px;
-    border: solid 2px darken($button-back, 5%);
-    margin-bottom: 10px;
+}
 
-    span {
-      display: block;
-      height: 5px;
-      background-color: $button-markers;
-      margin-top:  5px;
-      border-radius: 4px;
-    }
+ ul ul
+{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  padding:0;
+  z-index: 5000;
+  background-color: $color-gray;
+}
 
-  }
+ul ul li
+{
+  float:none;
+  width:200px
+}
 
-  .pi-nav.is-tapped .menu-icon {
-    background-color: darken($button-back, 20%);
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+ul ul a
+{
+  line-height:120%;
+  padding:10px 15px
+}
 
-    span {
-      background-color: darken(#FFF,30%);
-    }
-  }
+ ul ul ul
+{
+  top:0;
+  left:100%
+}
 
-  .pi-nav ul {
-    display: none;
-    max-width: none !important;
-  }
-
-  .pi-nav li {
-    float:  none;
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
-
-
-  .pi-nav.is-tapped  > ul {
-    display:  block;
-    position: absolute;
-    margin: 0;
-    background-color: $mobile-indicators-back-color;
-    right: 0;
-    left: 0;
-    top: $mobile-heading-gap;
-    z-index: 100;
-    padding: 0;
-
-    a {
-      @include box-sizing(border-box);
-      width: 100%;
-      margin: 0;
-      background-color: $pi-nav-menu-bg;
-      display: block;
-      padding-top: $padding;
-      padding-bottom: $padding;
-      padding-left: 20px;
-      padding-right: 20px;
-      height: auto;
-      color: $pi-nav-menu-color;
-      float: none;
-      font-size: $mobile-font-size;
-      line-height: $mobile-line-height;
-      font-family: $mobile-item-font;
-
-      border: none !important;
-      -webkit-font-smoothing: antialiased;
-      -webkit-tap-highlight-color: transparent;
-
-      &:hover {
-        background-color: $pi-nav-menu-hover-color;
-      }
-
-    }
-
-    li {
-      width: 100%;
-      background-color: $mobile-indicators-back-color;
-      border-bottom: solid 1px darken($pi-nav-menu-bg, 20%);
-      -webkit-tap-highlight-color: transparent;
-
-      li {
-        background-color: darken($mobile-indicators-back-color, 20%);
-      }
-    }
-
-
-
-    ul {
-      display: none;
-      width: 100%;
-      z-index: 200;
-      border: none;
-      margin-left: 0;
-      padding: 0;
-      position: relative !important;
-
-      ul {
-        clear: both;
-        left: 0;
-        margin-top: 0;
-      }
-
-      li {
-        border-bottom: solid 1px darken($pi-nav-menu-bg, 5%);
-
-        li a {
-          background-color: darken($pi-nav-menu-bg, 30%);
-          padding-left: 30px;
-        }
-      }
-
-      a {
-        background-color: darken($pi-nav-menu-bg, 10%);
-        font-size: 90%;
-        padding-left: 20px;
-
-        &:before {
-          content: '↳';
-          display: inline-block;
-          margin-right: 4px;
-          color: $mobile-indicators-color;
-          font-family: Arial;
-        }
-      }
-
-    }
-
-
-    // create space for indicator
-    li.nav-dropdown {
-      cursor: pointer;
-
-      &>a {
-        width: 100% - $mobile-sub-width;
-      }
-
-    }
-
-
-    li.nav-dropdown:after {
-      content: '▼';
-      position: absolute;
-      color: $mobile-indicators-color;
-      padding: 0;
-      display: block;
-      width: $mobile-sub-width;
-      right: 0;
-      margin-top: -($line-height + 2*$padding);
-      text-align: center;
-      font-size: $drop-indicators-size;
-      padding-top: $padding;
-      padding-bottom: $padding;
-      @include box-sizing(border-box);
-    }
-
-    li.expanded:after {
-      display: none;
-    }
-
-    li.expanded li:first-child:before {
-      content: '▲' !important;
-      position: absolute;
-      color: darken($mobile-indicators-color, 20%);
-      padding: 0;
-      display: block;
-      width: $mobile-sub-width;
-      right: 0;
-      margin-top: -($line-height + 2 *$padding);
-      text-align: center;
-      font-size: $drop-indicators-size;
-      padding-top: $padding;
-      padding-bottom: $padding;
-      @include box-sizing(border-box);
-
-    }
-
-    @if $showindicators {
-      // remove unnecessary indicators on mobiles
-      .nav-dropdown > a:after {
-        content: '' !important;
-      }
-
-      .nav-dropdown:hover > a:after {
-        content: '' !important;
-      }
-    }
-
-  }
+ul li:hover > ul
+{
+  display:block
+}
 }
