@@ -121,10 +121,10 @@ input[type="text"], input[type="email"], input[type="password"] {
 }
 
 @mixin pi-form-group-btn(){
+  display: flex;
 
-  input[type="text"], input[type="email"] {
-      @include calc(width, "100% - 2.5em");
-      float: left;
+  input[type="text"], input[type="email"], .pi-form__control, .ui-select-container {
+      flex: 1;
       border: 0;
       //width: auto;
 
@@ -136,8 +136,6 @@ input[type="text"], input[type="email"], input[type="password"] {
   button {
     overflow: visible;
     position: relative;
-    float: left;
-    width: 2.5em;
   }
 }
 @mixin pi-form-group-padding() {

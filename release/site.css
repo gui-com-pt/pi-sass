@@ -649,20 +649,19 @@ input[type="checkbox"]:focus {
   outline-offset: -2px;
 }
 
-.pi-form-group-btn input[type="text"], .pi-form-group-btn input[type="email"] {
-  width: -webkit-calc(100% - 2.5em);
-  width: calc(100% - 2.5em);
-  float: left;
+.pi-form-group-btn {
+  display: flex;
+}
+.pi-form-group-btn input[type="text"], .pi-form-group-btn input[type="email"], .pi-form-group-btn .pi-form__control, .pi-form-group-btn .ui-select-container {
+  flex: 1;
   border: 0;
 }
-.pi-form-group-btn input[type="text"]:focus, .pi-form-group-btn input[type="email"]:focus {
+.pi-form-group-btn input[type="text"]:focus, .pi-form-group-btn input[type="email"]:focus, .pi-form-group-btn .pi-form__control:focus, .pi-form-group-btn .ui-select-container:focus {
   outline: 0;
 }
 .pi-form-group-btn button {
   overflow: visible;
   position: relative;
-  float: left;
-  width: 2.5em;
 }
 
 select {
