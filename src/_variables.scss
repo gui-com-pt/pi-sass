@@ -2,11 +2,12 @@
 $grid-columns: 12;
 $grid-max-width: 65em;
 
- $text-color: #000000;
+$text-color: #000000;
 
 // breakpoints
-$breakpoint-small: "only screen and (min-width: 20em)";
-$breakpoint-medium: "only screen and (min-width: 30em)";
+$breakpoint-small: max-width 480px;
+$breakpoint-medium: 480px 1100px;
+$breakpoint-site: min-width: 1100px;
 
 $image-path: '../img' !default;
 

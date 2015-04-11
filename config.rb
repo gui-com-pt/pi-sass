@@ -1,5 +1,4 @@
 require 'susy'
-require 'sassy-buttons'
 require 'normalize-scss'
 require 'breakpoint'
 require 'animate-sass'

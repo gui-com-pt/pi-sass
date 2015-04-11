@@ -1,0 +1,49 @@
+@import "site";
+
+.layout {
+	@include container;
+}
+.content {
+	@include span(4 of 6);
+	background-color: $color-primary;
+}
+.intro {
+	@include container;
+}
+.intro__content {
+	@include span(1 of 2);
+}
+
+.intro > .pi-card {
+	@include span(1 of 2 last);
+}
+
+.cards-list {
+	@include container;
+	
+	> .pi-card {
+		@include breakpoint($breakpoint-medium) {
+			@include span(1 of 3);
+			
+			&:nth-child(3n) {
+				@include span(1 of 3 last);
+			}
+		}
+
+		@include breakpoint($breakpoint-site) {
+			@include span(1 of 5);
+
+			&:nth-child(5n) {
+				@include span(1 of 5 last);
+			}
+		}
+	}
+}
+
+.sidebar-left {
+	@include span(1 of 6);
+}
+
+.sidebar-right {
+	@include span(1 of 6 last);
+}
