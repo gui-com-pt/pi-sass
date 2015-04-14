@@ -2,5 +2,5 @@ SASS Pi
 ==============================
 
 
-SASS code to writte Pi applications. 
+Developing on dev branch. 
 
