@@ -5,8 +5,9 @@ $grid-max-width: 65em;
  $text-color: #000000;
 
 // breakpoints
-$breakpoint-small: "only screen and (min-width: 20em)";
-$breakpoint-medium: "only screen and (min-width: 30em)";
+$breakpoint-small: max-width 400px;
+$breakpoint-medium: 400px;
+$breakpoint-site: 1200px;
 
 $image-path: '../img' !default;
 
@@ -182,11 +183,15 @@ $font-size: 12px;
 $line-height: 20px;
 $padding: 10px;
 
-// horizontal space between nav items at top level
+$pi-nav-brand-full: false !default;
+
+$pi-nav-height: 40px;
 $pi-nav-bg: #000000;
 $pi-nav-link: #ffffff;
+// horizontal space between nav items at top level
 $pi-nav-menu-item-spacing: 10px;
-
+$pi-nav-font-size: $font-size;
+$pi-nav-line-height: $line-height;
 $pi-nav-menu-color: #FFF;
 $pi-nav-menu-bg: transparent;
 $pi-nav-menu-font: Arial, san-serif;

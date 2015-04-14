@@ -928,3 +928,96 @@ input[type="text"], input[type="email"], input[type="password"], input[type="but
 	@import "grid-md";
 }
  */
+.layout {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.layout:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.sidebar-left {
+  width: 8.16327%;
+  float: left;
+  margin-right: 2.04082%;
+}
+
+.sidebar-right {
+  width: 8.16327%;
+  float: right;
+  margin-right: 0;
+}
+
+.content {
+  width: 28.57143%;
+  float: left;
+  margin-right: 2.04082%;
+  background-color: #ffeb00;
+}
+
+.intro {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.intro:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.intro__content {
+  width: 44.44444%;
+  float: left;
+  margin-right: 11.11111%;
+}
+
+.intro > .pi-card {
+  width: 44.44444%;
+  float: right;
+  margin-right: 0;
+}
+
+.cards {
+  width: 48.97959%;
+  float: left;
+  margin-right: 2.04082%;
+}
+
+.cards-list {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cards-list:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+@media (min-width: 480px) and (max-width: 1100px) {
+  .cards-list > .pi-card {
+    width: 44.44444%;
+    float: left;
+    margin-right: 11.11111%;
+  }
+  .cards-list > .pi-card:nth-child(3n) {
+    width: 44.44444%;
+    float: right;
+    margin-right: 0;
+  }
+}
+@media (min-width: 1100px) {
+  .cards-list > .pi-card {
+    width: 28.57143%;
+    float: left;
+    margin-right: 7.14286%;
+  }
+  .cards-list > .pi-card:nth-child(3n) {
+    width: 28.57143%;
+    float: right;
+    margin-right: 0;
+  }
+}

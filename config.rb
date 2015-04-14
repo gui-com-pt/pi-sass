@@ -1,5 +1,4 @@
 require 'susy'
-require 'sassy-buttons'
 require 'normalize-scss'
 require 'breakpoint'
 require 'animate-sass'
@@ -13,4 +12,3 @@ relative_assets = true
 http_path = "src"
 css_dir = "release"
 sass_dir = "src"
-javascripts_dir = "web/public/dist"

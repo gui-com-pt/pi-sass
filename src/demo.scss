@@ -1,0 +1,56 @@
+@import "site";
+@import "susy";
+@import "breakpoint";
+$breakpoint-small: max-width 480px;
+$breakpoint-medium: 480px 1100px;
+$breakpoint-site: 1100px;
+.layout {
+	@include container;
+}
+
+.sidebar-left {
+	@include span(1 of 10);
+}
+
+.sidebar-right {
+	@include span(1 of 10 last);
+}
+.content {
+	@include span(3 of 10);
+	background-color: $color-primary;
+}
+.intro {
+	@include container;
+}
+.intro__content {
+	@include span(1 of 2);
+}
+
+.intro > .pi-card {
+	@include span(1 of 2 last);
+}
+
+.cards {
+	@include span(5 of 10);
+}
+.cards-list {
+	@include container;
+	
+	> .pi-card {
+		@include breakpoint($breakpoint-medium) {
+			@include span(1 of 2);
+			
+			&:nth-child(3n) {
+				@include span(1 of 2 last);
+			}
+		}
+
+		@include breakpoint($breakpoint-site) {
+			@include span(1 of 3);
+
+			&:nth-child(3n) {
+				@include span(1 of 3 last);
+			}
+		}
+	}
+}
