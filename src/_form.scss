@@ -123,11 +123,12 @@ input[type="text"], input[type="email"], input[type="password"] {
 @mixin pi-form-group-btn(){
   display: flex;
 
-  input[type="text"], input[type="email"], .pi-form__control, .ui-select-container {
-      flex: 1;
+  > .pi-form__group, > .pi-form__btn-group {
+    flex: 1;
+  }
+  input[type="text"], input[type="email"], input[type="date"], input[type="password"], .pi-form__control, .ui-select-container {
       border: 0;
       //width: auto;
-
       &:focus {
         outline: 0;
       }
@@ -136,7 +137,11 @@ input[type="text"], input[type="email"], input[type="password"] {
   button {
     overflow: visible;
     position: relative;
+    min-width: 100%;
   }
+}
+.pi-form__btn-group {
+  @include pi-form-group-btn();
 }
 @mixin pi-form-group-padding() {
   padding: rhythm(1) / 4;

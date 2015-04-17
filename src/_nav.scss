@@ -1,37 +1,109 @@
 %pi-nav__brand {
   border: 0;
   $h: $pi-nav-menu-item-spacing (($pi-nav-height - $pi-nav-font-size) / 2);
-  
+
   @if $pi-nav-brand-full {
-    $h: $pi-nav-height; 
+    $h: $pi-nav-height;
   }
 
   > img { height: $h; }
+
+  float: left;
+}
+
+%pi-nav__mobile {
+  > li {
+    display: block;
+  }
 }
 
 %pi-nav {
+
   min-height: $pi-nav-height;
   background-color: $pi-nav-bg;
   margin-bottom: $component-padding;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
 
-  ul li:hover > ul
-  {
-    display:block
+  ul.pi-nav__list-mobile, .pi-nav__brand {
+    display: initial;
+    -webkit-flex: 50% 1;
   }
-  
-
   ul
   {
     list-style:none;
     position:relative;
     float:left;
     margin:0;
-    padding:0
+    padding:0;
+    display: none;
+    -webkit-flex: 100%;
+  }
+
+  &.pi__nav--collapsed {
+    ul {
+      display: block;
+    }
+
+  }
+  ul.pi-nav__list-mobile {
+    display: block;
+    float: right;
+  }
+
+  ul li:hover > ul
+  {
+    display:block
+  }
+
+
+  @include breakpoint($breakpoint-medium) {
+    ul.pi-nav__list-mobile {
+      display: none;
+    }
+
+    ul {
+      display: initial;
+      -webkit-flex: none;
+    }
+    .pi-nav__brand {
+      -webkit-flex: none;
+    }
+
+    webkit-flex-direction: none;
+    -webkit-flex-wrap: nowrap;
+  }
+  @include breakpoint($breakpoint-site) {
+    ul.pi-nav__list-mobile {
+      display: none;
+    }
+
+    ul {
+      display: initial;
+      -webkit-flex: none;
+    }
+    .pi-nav__brand {
+      -webkit-flex: none;
+    }
+    webkit-flex-direction: none;
+    -webkit-flex-wrap: nowrap;
   }
 
   li {
     font-size: $font-size;
     line-height: $line-height;
+    display: block;
+    width: 100%;
+
+    @include breakpoint($breakpoint-medium) {
+        display: initial;
+        width: initial;
+    }
+    @include breakpoint($breakpoint-site) {
+        display: initial;
+        width: initial;
+    }
   }
 
   ul a
@@ -70,7 +142,7 @@
     display:none;
     position:absolute;
     top:100%;
-    left:0;
+    right:0;
     padding:0;
     z-index: 5000;
     background-color: $color-gray;
