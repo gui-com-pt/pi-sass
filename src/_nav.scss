@@ -172,3 +172,7 @@
 .pi-nav {
   @extend %pi-nav;
 }
+.pi-nav__link-active, a.pi-nav__link-active, ul li a.pi-nav__link-active {
+  color: $pi-nav-menu-selected-color;
+  background-color: $pi-nav-menu-selected-bg;
+}

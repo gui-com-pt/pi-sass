@@ -562,6 +562,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 }
 .pi-form__btn-group input[type="text"], .pi-form__btn-group input[type="email"], .pi-form__btn-group input[type="date"], .pi-form__btn-group input[type="password"], .pi-form__btn-group .pi-form__control, .pi-form__btn-group .ui-select-container {
   border: 0;
+  min-width: 100%;
 }
 .pi-form__btn-group input[type="text"]:focus, .pi-form__btn-group input[type="email"]:focus, .pi-form__btn-group input[type="date"]:focus, .pi-form__btn-group input[type="password"]:focus, .pi-form__btn-group .pi-form__control:focus, .pi-form__btn-group .ui-select-container:focus {
   outline: 0;
@@ -675,6 +676,7 @@ input[type="checkbox"]:focus {
 }
 .pi-form-group-btn input[type="text"], .pi-form-group-btn input[type="email"], .pi-form-group-btn input[type="date"], .pi-form-group-btn input[type="password"], .pi-form-group-btn .pi-form__control, .pi-form-group-btn .ui-select-container {
   border: 0;
+  min-width: 100%;
 }
 .pi-form-group-btn input[type="text"]:focus, .pi-form-group-btn input[type="email"]:focus, .pi-form-group-btn input[type="date"]:focus, .pi-form-group-btn input[type="password"]:focus, .pi-form-group-btn .pi-form__control:focus, .pi-form-group-btn .ui-select-container:focus {
   outline: 0;
@@ -856,6 +858,11 @@ input[type="text"], input[type="email"], input[type="password"], input[type="but
 .pi-nav ul ul ul {
   top: 0;
   left: 100%;
+}
+
+.pi-nav__link-active, a.pi-nav__link-active, ul li a.pi-nav__link-active {
+  color: #000;
+  background-color: transparent;
 }
 
 .modal-open {
