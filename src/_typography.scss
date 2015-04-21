@@ -281,3 +281,8 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+a.pi-link--active {
+  color: $component-active-color;
+  background-color: $component-active-bg;
+}

@@ -64,13 +64,13 @@ $screen-large: 1400px;
 /*
  * Colors
  */
-
-$color-primary: #ffeb00;
-$color-gray: #8b877e;
-$color-danger: #e6625d;
+$color-gray: #231f20;
+$color-gray-light: #b6b2b3;
+$color-primary: #8dc63f;
+$color-secondary: #01a1c5;
+$color-danger: #da3826;
 $color-info: yellow;
 $color-success: #31b674;
-
 $color-highlight: $color-danger;
 
 /*
@@ -144,8 +144,10 @@ $border-radius-large: 30px;
 
 //** Global color for active items (e.g., navs or dropdowns).
 $module-active-color: #fff;
-//** Global background color for active items (e.g., navs or dropdowns).
+$component-active-color: $module-active-color;
+/** Global background color for active items (e.g., navs or dropdowns) */
 $module-active-bg: $color-primary;
+$component-active-bg: $color-primary;
 
 
 /*

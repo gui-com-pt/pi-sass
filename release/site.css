@@ -86,6 +86,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /*
  * z-index
  */
+/** Global background color for active items (e.g., navs or dropdowns) */
 /*
  * Sassy Buttons
  */
@@ -475,6 +476,11 @@ table {
   border-spacing: 0;
 }
 
+a.pi-link--active {
+  color: #fff;
+  background-color: #8dc63f;
+}
+
 /**
  * @name Responsive
  *
@@ -709,11 +715,11 @@ h3 {
 }
 
 a {
-  color: #ffeb00;
+  color: #8dc63f;
   text-decoration: none;
 }
 a:hover {
-  color: #b3a400;
+  color: #648e2a;
   text-decoration: none;
 }
 
@@ -830,7 +836,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="but
   padding: 0 15px;
 }
 .pi-nav ul a:hover {
-  color: #ffeb00;
+  color: #8dc63f;
 }
 .pi-nav ul li {
   position: relative;
@@ -845,7 +851,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="but
   right: 0;
   padding: 0;
   z-index: 5000;
-  background-color: #8b877e;
+  background-color: #231f20;
 }
 .pi-nav ul ul li {
   float: none;
