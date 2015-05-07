@@ -562,6 +562,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 .pi-form__btn-group {
   display: flex;
+  padding: 0.375em;
 }
 .pi-form__btn-group > .pi-form__group, .pi-form__btn-group > .pi-form__btn-group {
   flex: 1;
@@ -676,6 +677,7 @@ input[type="checkbox"]:focus {
 
 .pi-form-group-btn {
   display: flex;
+  padding: 0.375em;
 }
 .pi-form-group-btn > .pi-form__group, .pi-form-group-btn > .pi-form__btn-group {
   flex: 1;
