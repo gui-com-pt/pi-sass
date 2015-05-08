@@ -138,6 +138,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 }
 @mixin pi-form-group-btn(){
   display: flex;
+  
   > .pi-form__group, > .pi-form__btn-group {
     @include pi-form-group-btn-group();
   }
@@ -149,7 +150,6 @@ input[type="text"], input[type="email"], input[type="password"] {
       }
       min-width: 100%;
     }
-    @include pi-form-group-padding();
 
   button {
     overflow: visible;
@@ -200,21 +200,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 @mixin pi-form-group($padding: none) {
 
   color: $pi-form-group-color;
-
-  input::-webkit-input-placeholder {
-    font-weight: normal;
-    font-style: italic;
-  }
-
-  input:-moz-placeholder {
-    font-weight: normal;
-    font-style: italic;
-  }
-
-  input:-ms-input-placeholder {
-    font-weight: normal;
-    font-style: italic;
-  }
+  @include placeholder($pi-form-group-control-color, "", "italic");
 
   button {
     border: 0;
@@ -358,7 +344,7 @@ a {
 }
 
 
-input[type="text"], input[type="email"], input[type="password"], input[type="button"], input[type="submit"], button, select {
+input[type="text"], input[type="email"], input[type="password"], input[type="button"], input[type="submit"], button, select, textarea {
   font-size: $button-font-size;
   font-family: $button-font-family;
   line-height: $button-line-height;

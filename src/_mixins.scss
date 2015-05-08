@@ -192,3 +192,42 @@
     background: $color; /* The Fallback */
     background: rgba($color, $opacity);
 }
+
+@mixin placeholder($color, $size:"", $style: "") {
+  &::-webkit-input-placeholder {
+    color: $color;
+    @if $style != "" {
+      font-style: $style;
+    }
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
+  &:-moz-placeholder {
+    color: $color;
+    @if $style != "" {
+      font-style: $style;
+    }
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
+  &::-moz-placeholder {
+    color: $color;
+    @if $style != "" {
+      font-style: $style;
+    }
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+    @if $style != "" {
+      font-style: $style;
+    }
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
+}
