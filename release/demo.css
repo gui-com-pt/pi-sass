@@ -562,7 +562,6 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 .pi-form__btn-group {
   display: flex;
-  padding: 0.375em;
 }
 .pi-form__btn-group > .pi-form__group, .pi-form__btn-group > .pi-form__btn-group {
   flex: 1;
@@ -677,7 +676,6 @@ input[type="checkbox"]:focus {
 
 .pi-form-group-btn {
   display: flex;
-  padding: 0.375em;
 }
 .pi-form-group-btn > .pi-form__group, .pi-form-group-btn > .pi-form__btn-group {
   flex: 1;
@@ -736,7 +734,7 @@ a:hover {
   overflow: hidden;
 }
 
-input[type="text"], input[type="email"], input[type="password"], input[type="button"], input[type="submit"], button, select {
+input[type="text"], input[type="email"], input[type="password"], input[type="button"], input[type="submit"], button, select, textarea {
   font-size: 12px;
   font-family: "Arial", sans-serif;
   line-height: 15px;

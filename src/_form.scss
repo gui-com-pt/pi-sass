@@ -9,6 +9,7 @@
     outline-color: $pi-form-group-control-outline-color;
   }
 
+  z-index: $z-index-form-controls;
 }
 
 
@@ -138,7 +139,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 }
 @mixin pi-form-group-btn(){
   display: flex;
-  
+
   > .pi-form__group, > .pi-form__btn-group {
     @include pi-form-group-btn-group();
   }
@@ -198,7 +199,7 @@ input[type="text"], input[type="email"], input[type="password"] {
  *
  */
 @mixin pi-form-group($padding: none) {
-
+  z-index: $z-index-form-group;
   color: $pi-form-group-color;
   @include placeholder($pi-form-group-control-color, "", "italic");
 
