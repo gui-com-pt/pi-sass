@@ -998,7 +998,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="but
   }
 }
 @media (min-width: 1024px) {
-  .modal-lg {
+  .modal-dialog {
     width: 900px;
   }
 }
