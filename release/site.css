@@ -748,6 +748,46 @@ input[type="text"], input[type="email"], input[type="password"], input[type="but
   height: 10px 14px;
 }
 
+.pi-nav ul li:hover > ul {
+  display: block;
+}
+.pi-nav ul a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0 15px;
+}
+.pi-nav ul a:hover {
+  color: #8dc63f;
+}
+.pi-nav ul li {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+.pi-nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding: 0;
+  z-index: 5000;
+  background-color: #231f20;
+}
+.pi-nav ul ul li {
+  float: none;
+  width: 200px;
+}
+.pi-nav ul ul a {
+  line-height: 120%;
+  padding: 10px 14px;
+}
+.pi-nav ul ul ul {
+  top: 0;
+  left: 100%;
+}
+
 .pi-nav {
   min-height: 40px;
   background-color: #231f20;
@@ -775,9 +815,6 @@ input[type="text"], input[type="email"], input[type="password"], input[type="but
 .pi-nav ul.pi-nav__list-mobile {
   display: block;
   float: right;
-}
-.pi-nav ul li:hover > ul {
-  display: block;
 }
 @media (min-width: 400px) {
   .pi-nav {
@@ -828,42 +865,6 @@ input[type="text"], input[type="email"], input[type="password"], input[type="but
     display: initial;
     width: initial;
   }
-}
-.pi-nav ul a {
-  display: block;
-  text-decoration: none;
-  color: #ffffff;
-  padding: 0 15px;
-}
-.pi-nav ul a:hover {
-  color: #8dc63f;
-}
-.pi-nav ul li {
-  position: relative;
-  float: left;
-  margin: 0;
-  padding: 0;
-}
-.pi-nav ul ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  padding: 0;
-  z-index: 5000;
-  background-color: #231f20;
-}
-.pi-nav ul ul li {
-  float: none;
-  width: 200px;
-}
-.pi-nav ul ul a {
-  line-height: 120%;
-  padding: 10px 14px;
-}
-.pi-nav ul ul ul {
-  top: 0;
-  left: 100%;
 }
 
 .pi-nav__link-active, a.pi-nav__link-active, ul li a.pi-nav__link-active {
