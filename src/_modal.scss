@@ -134,7 +134,7 @@
   }
 
   // Modal sizes
-  .modal-sm { width: $modal-sm; }
+  .modal-sm { width: $modal-sm !important; }
 }
 
 @media (min-width: $screen-base) {

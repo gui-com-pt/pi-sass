@@ -185,4 +185,5 @@
 .pi-nav__link-active, a.pi-nav__link-active, ul li a.pi-nav__link-active {
   color: $pi-nav-menu-selected-color;
   background-color: $pi-nav-menu-selected-bg;
+  font-weight: $pi-nav-menu-selected-fontweight !important;
 }

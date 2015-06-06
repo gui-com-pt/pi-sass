@@ -870,6 +870,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="but
 .pi-nav__link-active, a.pi-nav__link-active, ul li a.pi-nav__link-active {
   color: #000;
   background-color: transparent;
+  font-weight: 400 !important;
 }
 
 .modal-open {
@@ -995,7 +996,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="but
   }
 
   .modal-sm {
-    width: 300px;
+    width: 300px !important;
   }
 }
 @media (min-width: 1024px) {
