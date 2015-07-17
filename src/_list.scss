@@ -5,7 +5,11 @@ $list-group-radius: 4px;
   padding-left: 0px;
   margin: $component-padding;
 
-  > .list-group__item {
+  > li, > .list-group__item {
+    @include clearfix();
+    > a {
+      display: block;
+    }
     position: relative;
     display: block;
     padding: 10px 15px;
@@ -17,5 +21,45 @@ $list-group-radius: 4px;
       @include border-radius($list-group-radius);
       @include border-radius($list-group-radius);
     }
+
+    &:hover {
+      background-color: $color-gray;
+      cursor: pointer;
+    }
   }
+
+  @each $item in $component-colors {
+    $name: nth($item, 1);
+    $color: nth($item, 2);
+    $bg: nth($item, 3);
+    $border: nth($item, 4);
+
+    > .list-group__item-#{$name} {
+      background-color: $bg;
+      color: $color;
+      a {
+        color: $color;
+      }
+    }
+  }
+
+  > .list-group__item-active {
+    background-color: $color-primary;
+    color: $text-color;
+    a {
+      color: $text-color;
+    }
+    border: $color-primary;
+  }
+
+}
+
+.list-group__item > .avatar {
+  max-width: 15%;
+  @include avatar-img();
+  float: left;
+}
+
+.list-group__item > .button, .list-group__item > .badge {
+  float: right;
 }

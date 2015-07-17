@@ -15,7 +15,7 @@
 @mixin border-box {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 @mixin box-sizing($box-model) {
@@ -53,7 +53,7 @@
  *
  * Depends on modernizr.
  * When using this mix you must upload both default extension and svg
- * 
+ *
  */
 @mixin retina-background-image($name, $size:false){
     background-image: url(#{$image-path}/#{$name}.svg);
@@ -92,13 +92,13 @@
   }
   @-moz-keyframes $animation-name {
     @content;
-  }  
+  }
   @-ms-keyframes $animation-name {
     @content;
   }
   @-o-keyframes $animation-name {
     @content;
-  }  
+  }
   @keyframes $animation-name {
     @content;
   }
@@ -110,7 +110,7 @@
   -moz-animation: #{$str};
   -ms-animation: #{$str};
   -o-animation: #{$str};
-  animation: #{$str};      
+  animation: #{$str};
 }
 
 /**
@@ -132,7 +132,7 @@
 /**
  * @name Opacity
  * @description
- * 
+ *
  * Compatible with IE5+ usinf the alpha filter
  * @usage
  * p {
@@ -146,7 +146,7 @@
 }
 
 
-/** 
+/**
  * @name Clearfix
  * @description
  *
@@ -158,7 +158,7 @@
  */
 %clearfix {
     *zoom: 1;
-    &:before, 
+    &:before,
     &:after {
         content: " ";
         display: table;
@@ -184,8 +184,8 @@
 
 
 @mixin grayscale(){
-  -webkit-filter: grayscale(100%); 
-  filter: grayscale(100%); 
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 @mixin background-opacity($color, $opacity: 0.3) {
@@ -230,4 +230,9 @@
       font-size: $size;
     }
   }
+}
+
+@mixin avatar-img() {
+  @include border-radius(50%);
+  border: solid 1px $color-gray;
 }

@@ -72,6 +72,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  * Colors
  */
 /*
+ * Brand colors */
+/*
  * Table
  */
 /*
@@ -87,9 +89,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  * z-index
  */
 /** Global background color for active items (e.g., navs or dropdowns) */
-/*
- * Sassy Buttons
- */
 /**
  * Navigation Module
  */
@@ -113,7 +112,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  *
  * Depends on modernizr.
  * When using this mix you must upload both default extension and svg
- * 
+ *
  */
 /*
  * @usage
@@ -139,14 +138,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /**
  * @name Opacity
  * @description
- * 
+ *
  * Compatible with IE5+ usinf the alpha filter
  * @usage
  * p {
  *  @include opacity(0.8);
  * }
  */
-/** 
+/**
  * @name Clearfix
  * @description
  *
@@ -478,7 +477,7 @@ table {
 
 a.pi-link--active {
   color: #fff;
-  background-color: #8dc63f;
+  background-color: #0e57c8;
 }
 
 /**
@@ -558,25 +557,6 @@ img {
 
 input[type="text"], input[type="email"], input[type="password"] {
   max-width: 100%;
-}
-
-.pi-form__btn-group {
-  display: flex;
-}
-.pi-form__btn-group > .pi-form__group, .pi-form__btn-group > .pi-form__btn-group {
-  flex: 1;
-}
-.pi-form__btn-group input[type="text"], .pi-form__btn-group input[type="email"], .pi-form__btn-group input[type="date"], .pi-form__btn-group input[type="password"], .pi-form__btn-group .pi-form__control, .pi-form__btn-group .ui-select-container {
-  border: 0;
-  min-width: 100%;
-}
-.pi-form__btn-group input[type="text"]:focus, .pi-form__btn-group input[type="email"]:focus, .pi-form__btn-group input[type="date"]:focus, .pi-form__btn-group input[type="password"]:focus, .pi-form__btn-group .pi-form__control:focus, .pi-form__btn-group .ui-select-container:focus {
-  outline: 0;
-}
-.pi-form__btn-group button {
-  overflow: visible;
-  position: relative;
-  min-width: 100%;
 }
 
 /**
@@ -715,11 +695,11 @@ h3 {
 }
 
 a {
-  color: #8dc63f;
+  color: #0e57c8;
   text-decoration: none;
 }
 a:hover {
-  color: #648e2a;
+  color: #093881;
   text-decoration: none;
 }
 
@@ -740,6 +720,60 @@ input[type="text"], input[type="email"], input[type="password"], input[type="but
   line-height: 15px;
 }
 
+.pi-form__group {
+  z-index: 9;
+  color: #666666;
+  margin-bottom: 15px;
+}
+.pi-form__group::-webkit-input-placeholder {
+  color: #666666;
+  font-style: "italic";
+}
+.pi-form__group:-moz-placeholder {
+  color: #666666;
+  font-style: "italic";
+}
+.pi-form__group::-moz-placeholder {
+  color: #666666;
+  font-style: "italic";
+}
+.pi-form__group:-ms-input-placeholder {
+  color: #666666;
+  font-style: "italic";
+}
+
+.pi-form__btn-group, .pi-form__groups {
+  display: flex;
+}
+.pi-form__btn-group > .pi-form__group, .pi-form__btn-group > .pi-form__btn-group, .pi-form__groups > .pi-form__group, .pi-form__groups > .pi-form__btn-group {
+  flex: 1;
+}
+.pi-form__btn-group input[type="text"], .pi-form__btn-group input[type="email"], .pi-form__btn-group input[type="date"], .pi-form__btn-group input[type="password"], .pi-form__btn-group .pi-form__control, .pi-form__btn-group .ui-select-container, .pi-form__groups input[type="text"], .pi-form__groups input[type="email"], .pi-form__groups input[type="date"], .pi-form__groups input[type="password"], .pi-form__groups .pi-form__control, .pi-form__groups .ui-select-container {
+  border: 0;
+  min-width: 100%;
+}
+.pi-form__btn-group input[type="text"]:focus, .pi-form__btn-group input[type="email"]:focus, .pi-form__btn-group input[type="date"]:focus, .pi-form__btn-group input[type="password"]:focus, .pi-form__btn-group .pi-form__control:focus, .pi-form__btn-group .ui-select-container:focus, .pi-form__groups input[type="text"]:focus, .pi-form__groups input[type="email"]:focus, .pi-form__groups input[type="date"]:focus, .pi-form__groups input[type="password"]:focus, .pi-form__groups .pi-form__control:focus, .pi-form__groups .ui-select-container:focus {
+  outline: 0;
+}
+.pi-form__btn-group button, .pi-form__groups button {
+  overflow: visible;
+  position: relative;
+  min-width: 100%;
+}
+
+.pi-form__control {
+  width: 100%;
+  padding: 6px 12px;
+  background-color: transparent;
+  color: #666666;
+  border: solid 1px #f6f6f6;
+  z-index: 8;
+}
+.pi-form__control:focus {
+  background-color: #f6f6f6;
+  outline-color: #ffffff;
+}
+
 .pi-nav__brand {
   border: 0;
   float: left;
@@ -758,7 +792,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="but
   padding: 0 15px;
 }
 .pi-nav ul a:hover {
-  color: #8dc63f;
+  color: #0e57c8;
 }
 .pi-nav ul li {
   position: relative;
@@ -773,7 +807,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="but
   right: 0;
   padding: 0;
   z-index: 5000;
-  background-color: #231f20;
+  background-color: #f6f6f6;
 }
 .pi-nav ul ul li {
   float: none;
