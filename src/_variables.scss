@@ -67,14 +67,25 @@ $screen-large: 1400px;
 /*
  * Colors
  */
-$color-gray: #231f20;
+$color-gray: #f6f6f6;
+$color-gray-dark: #8d8f9c;
 $color-gray-light: #b6b2b3;
-$color-primary: #8dc63f;
+$color-primary: #0e57c8;
 $color-secondary: #01a1c5;
 $color-danger: #da3826;
 $color-info: yellow;
 $color-success: #31b674;
 $color-highlight: $color-danger;
+
+$colors: primary secondary danger info highlight;
+$component-colors: (primary $text-color $color-primary $color-primary, secondary $text-color $color-secondary $color-secondary, danger $text-color $color-danger $color-danger, info $text-color $color-info $color-info, highlight $text-color $color-highlight $color-highlight, default $text-color $color-gray $color-gray);
+/*
+ * Brand colors */
+$brand-primary: $color-primary;
+$brand-secondary: $color-secondary;
+$brand-danger: $color-danger;
+$brand-info: $color-info;
+$brand-highlight: $color-highlight;
 
 /*
  * Table
@@ -151,22 +162,6 @@ $component-active-color: $module-active-color;
 /** Global background color for active items (e.g., navs or dropdowns) */
 $module-active-bg: $color-primary;
 $component-active-bg: $color-primary;
-
-
-/*
- * Sassy Buttons
- */
-$sb-base-color:      #0bc265;      // Base color of your button
-$sb-second-color:    false;        // Optional second color of button gradient
-$sb-border-radius:   10px;         // Button border radius
-$sb-border-width:    1px;          // Button border width
-$sb-padding:         0.5em 1.5em;  // Button padding
-$sb-font-size:       20px;         // Button font-size
-$sb-line-height:     1.2em;        // Button line-height
-$sb-text-color:      white;        // Button text color
-$sb-text-style:      "inset";      // Button text shadow style
-$sb-gradient-style:  "matte";      // Button gradient style
-$sb-auto-states:     true;
 
 
 
@@ -250,6 +245,7 @@ $button-transition-default: $link-transition-default;
 $pi-form-footer-bg: #EEEEEE;
 $pi-form-group-bg: #dddddd;
 $pi-form-group-color: #666666;
+$pi-form-group-margin: 15px;
 $pi-form-group-bg: #ffffff;
 $pi-form-group-control-color: #666666;
 $pi-form-group-control-bg: transparent;

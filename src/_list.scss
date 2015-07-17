@@ -1,0 +1,21 @@
+$list-group-margin: 0 0 15px 0;
+$list-group-radius: 4px;
+
+.list-group {
+  padding-left: 0px;
+  margin: $component-padding;
+
+  > .list-group__item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    border: solid 1px $color-gray;
+    background-color: #fff;
+
+    &:first-child {
+      @include border-radius($list-group-radius);
+      @include border-radius($list-group-radius);
+    }
+  }
+}

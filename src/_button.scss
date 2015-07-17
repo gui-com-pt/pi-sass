@@ -1,0 +1,41 @@
+button::-moz-focus-inner { /* remove extra button spacing for Mozilla Firefox */
+  border: 0;
+  padding: 0;
+}
+
+@mixin button(){
+  @include border-radius($button-border-radius, $button-border-radius);
+  text-align: center;
+  border: $button-border;
+  padding: $button-padding;
+  border: 0;
+  cursor: pointer;
+
+  &:active, &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    @include transition($button-transition-default);
+    cursor: pointer;
+  }
+
+}
+/*
+ *Button states theme  */
+@each $item in $component-colors {
+  $name: nth($item, 1);
+  $color: nth($item, 2);
+  $bg: nth($item, 3);
+  $border: nth($item, 4);
+  .button-#{$name} {
+    @include button();
+    background-color: $bg;
+    color: $color;
+  }
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}

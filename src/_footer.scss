@@ -1,0 +1,10 @@
+$pi-footer-padding: $component-padding;
+$pi-footer-bg: $color-gray-dark;
+$pi-footer-color: #fff;
+
+.pi-footer__wrapper {
+  @include clearfix();
+  background-color: $pi-footer-bg;
+  color: $pi-footer-color;
+  padding: $pi-footer-padding;
+}

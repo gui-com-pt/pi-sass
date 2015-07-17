@@ -6,6 +6,7 @@
   border: $pi-form-group-control-border;
 
   &:focus {
+    background-color: $color-gray;
     outline-color: $pi-form-group-control-outline-color;
   }
 
@@ -48,18 +49,7 @@
     }
   }
 }
-@mixin button(){
-  @include border-radius($button-border-radius, $button-border-radius);
-  text-align: center;
-  border: $button-border;
-  padding: $button-padding;
 
-  &:hover {
-    @include transition($button-transition-default);
-    cursor: pointer;
-  }
-
-}
 @mixin button-primary(){
   @include button();
   background-color: $color-primary;
@@ -158,9 +148,6 @@ input[type="text"], input[type="email"], input[type="password"] {
     min-width: 100%;
   }
 }
-.pi-form__btn-group {
-  @include pi-form-group-btn();
-}
 /**
  * @name Form
  *
@@ -202,22 +189,9 @@ input[type="text"], input[type="email"], input[type="password"] {
   z-index: $z-index-form-group;
   color: $pi-form-group-color;
   @include placeholder($pi-form-group-control-color, "", "italic");
-
-  button {
-    border: 0;
-    /*padding: 0;*/
-    cursor: pointer;
-
-    &:active, &:focus {
-      outline: 0;
-    }
-  }
-
-  button::-moz-focus-inner { /* remove extra button spacing for Mozilla Firefox */
-    border: 0;
-    padding: 0;
-  }
+  margin-bottom: $pi-form-group-margin;
 }
+
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -353,4 +327,18 @@ input[type="text"], input[type="email"], input[type="password"], input[type="but
 
 .pi-form__guide {
 
+}
+
+.pi-form {
+  @include pi-form();
+}
+.pi-form__group {
+  @include pi-form-group();
+}
+.pi-form__btn-group, .pi-form__groups {
+  @include pi-form-group-btn();
+}
+
+.pi-form__control {
+  @include pi-form-group-control();
 }
