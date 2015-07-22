@@ -1030,8 +1030,10 @@ input[type="text"], input[type="email"], input[type="password"], input[type="but
   }
 
   .modal-sm {
-    width: 300px !important;
+    width: 300px;
   }
+
+  /*!important*/
 }
 @media (min-width: 1024px) {
   .modal-dialog {
