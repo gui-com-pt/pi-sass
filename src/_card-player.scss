@@ -17,3 +17,35 @@
 .pi-card__player {
   @extend %pi-card__player;
 }
+
+.pi-card__photo-img {
+	width: 100%;
+	img {
+		max-width: 100%;
+	}
+	margin-bottom: 8px;
+}
+
+.pi-card__date {
+	color: lighten($font-color, 10%);
+
+  font-size: 0.6em;
+}
+.pi-card__content {
+  font-size: 0.8em;
+}
+
+.pi-card__gallery {
+
+	@include container(100%);
+}
+.pi-card__gallery-item {
+		@include span(1 of 4);
+
+		&:nth-child(4n) {
+			@include span(1 of 4 last);
+		}
+	}
+.pi-card__gallery-item-avatar {
+	max-width: 100%;
+}

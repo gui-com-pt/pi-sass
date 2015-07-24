@@ -1,0 +1,62 @@
+.page-view__wrapper {
+  @extend %page-view__wrapper;
+  @include clearfix;
+}
+
+.page-view__side {
+  @extend %page-view__side;
+  @include clearfix;
+}
+
+.page-view__content {
+  @extend %page-view__content;
+  @include clearfix;
+}
+.page-view__content.page-view__content--right-side {
+  @include breakpoint($breakpoint-site) {
+    @include span(2 of 4);
+  }
+}
+
+.page-view__content--right-side + .page-view__side {
+  @include breakpoint($breakpoint-site) {
+    @include span(1 of 4 last);
+  }
+}
+%page-view__wrapper {
+  @include container;
+}
+
+%page-view__side {
+  @include breakpoint($breakpoint-site){
+    @include span(1 of 4);
+  }
+}
+
+%page-view__content {
+  @include breakpoint($breakpoint-site){
+    @include span(3 of 4 last);
+  }
+}
+.page-list__wrapper {
+  @include container;
+}
+.page-list__head {
+  @include page-subheading();
+}
+.page-list__side {
+  @include breakpoint($breakpoint-site){
+    @include span(1 of 4);
+  }
+}
+.page-list__content {
+  @include breakpoint($breakpoint-site) {
+    @include span(3 of 4 last);
+  }
+}
+
+.page-list__content + .page-list__side {
+  @include breakpoint($breakpoint-site) {
+    @include span(2 of 4 last);
+  }
+}

@@ -236,3 +236,8 @@
   @include border-radius(50%);
   border: solid 1px $color-gray;
 }
+
+@mixin page-subheading(){
+  margin-bottom: $component-padding;
+
+};

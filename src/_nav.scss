@@ -85,7 +85,7 @@
 }
 
 %pi-nav {
-  
+
   min-height: $pi-nav-height;
   background-color: $pi-nav-bg;
   /*margin-bottom: $component-padding;*/
@@ -120,7 +120,7 @@
     float: right;
   }
 
-  
+
 
 
   @include breakpoint($breakpoint-medium) {
@@ -186,4 +186,11 @@
   color: $pi-nav-menu-selected-color;
   background-color: $pi-nav-menu-selected-bg;
   font-weight: $pi-nav-menu-selected-fontweight !important;
+}
+
+.pi-nav__wrapper--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
