@@ -61,7 +61,7 @@
     top:100%;
     right:0;
     padding:0;
-    z-index: 5000;
+    z-index: $z-index-pi-nav-sub-menu;
     background-color: $color-gray;
   }
 
@@ -85,13 +85,17 @@
 }
 
 %pi-nav {
-
+  font-weight: $pi-nav-menu-font-weight;
+  font-sie: $pi-nav-menu-font-size;
   min-height: $pi-nav-height;
-  background-color: $pi-nav-bg;
   /*margin-bottom: $component-padding;*/
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-flex-wrap: wrap;
+  position: relative;
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 
   ul.pi-nav__list-mobile, .pi-nav__brand {
     display: initial;
@@ -181,6 +185,10 @@
 }
 .pi-nav {
   @extend %pi-nav;
+}
+.pi-nav__wrapper {
+  background-color: $pi-nav-bg;
+  z-index: $z-index-pi-nav;
 }
 .pi-nav__link-active, a.pi-nav__link-active, ul li a.pi-nav__link-active {
   color: $pi-nav-menu-selected-color;

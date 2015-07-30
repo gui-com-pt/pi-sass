@@ -1,32 +1,25 @@
 /*
-Error: Undefined mixin 'container'.
-        on line 40 of /home/gui/workspace/pi-sass/src/_card-player.scss, in `container'
-        from line 40 of /home/gui/workspace/pi-sass/src/_card-player.scss
-        from line 28 of /home/gui/workspace/pi-sass/src/site.scss
+Error: Undefined variable: "$text-color".
+        on line 3 of /home/gui/workspace/pi-sass/src/_typography.scss
+        from line 21 of /home/gui/workspace/pi-sass/src/site.scss
         from line 1 of /home/gui/workspace/pi-sass/src/demo.scss
 
-35: }
-36: .cards-list {
-37: 	@include container;
-38: 	
-39: 	> .pi-card {
-40: 		@include breakpoint($breakpoint-medium) {
-41: 			@include span(1 of 2);
-42: 			
-43: 			&:nth-child(3n) {
-44: 				@include span(1 of 2 last);
-45: 			}
+1: @import "site";
+2: @import "susy";
+3: @import "breakpoint";
+4: $breakpoint-small: max-width 480px;
+5: $breakpoint-medium: 480px 1100px;
+6: $breakpoint-site: 1100px;
+7: .layout {
+8: 	@include container;
 
 Backtrace:
-/home/gui/workspace/pi-sass/src/_card-player.scss:40:in `container'
-/home/gui/workspace/pi-sass/src/_card-player.scss:40
-/home/gui/workspace/pi-sass/src/site.scss:28
+/home/gui/workspace/pi-sass/src/_typography.scss:3
+/home/gui/workspace/pi-sass/src/site.scss:21
 /home/gui/workspace/pi-sass/src/demo.scss:1
-/var/lib/gems/1.9.1/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:338:in `block in visit_mixin'
-/var/lib/gems/1.9.1/gems/sass-3.4.9/lib/sass/stack.rb:98:in `block in with_mixin'
-/var/lib/gems/1.9.1/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
-/var/lib/gems/1.9.1/gems/sass-3.4.9/lib/sass/stack.rb:98:in `with_mixin'
-/var/lib/gems/1.9.1/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:336:in `visit_mixin'
+/var/lib/gems/1.9.1/gems/sass-3.4.9/lib/sass/script/tree/variable.rb:49:in `_perform'
+/var/lib/gems/1.9.1/gems/sass-3.4.9/lib/sass/script/tree/node.rb:50:in `perform'
+/var/lib/gems/1.9.1/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:384:in `visit_prop'
 /var/lib/gems/1.9.1/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
 /var/lib/gems/1.9.1/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
 /var/lib/gems/1.9.1/gems/sass-3.4.9/lib/sass/stack.rb:79:in `block in with_base'
@@ -103,4 +96,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'container'.\A         on line 40 of /home/gui/workspace/pi-sass/src/_card-player.scss, in `container'\A         from line 40 of /home/gui/workspace/pi-sass/src/_card-player.scss\A         from line 28 of /home/gui/workspace/pi-sass/src/site.scss\A         from line 1 of /home/gui/workspace/pi-sass/src/demo.scss\A \A 35: }\A 36: .cards-list {\A 37: 	@include container;\A 38: 	\A 39: 	> .pi-card {\A 40: 		@include breakpoint($breakpoint-medium) {\A 41: 			@include span(1 of 2);\A 42: 			\A 43: 			&:nth-child(3n) {\A 44: 				@include span(1 of 2 last);\A 45: 			}"; }
+  content: "Error: Undefined variable: \"$text-color\".\A         on line 3 of /home/gui/workspace/pi-sass/src/_typography.scss\A         from line 21 of /home/gui/workspace/pi-sass/src/site.scss\A         from line 1 of /home/gui/workspace/pi-sass/src/demo.scss\A \A 1: @import \"site\";\A 2: @import \"susy\";\A 3: @import \"breakpoint\";\A 4: $breakpoint-small: max-width 480px;\A 5: $breakpoint-medium: 480px 1100px;\A 6: $breakpoint-site: 1100px;\A 7: .layout {\A 8: 	@include container;"; }

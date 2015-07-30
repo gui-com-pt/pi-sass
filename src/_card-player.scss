@@ -13,7 +13,17 @@
     border: solid 6px #e1e1e1;
   }
 }
-
+.pi-card {
+  margin-bottom: $component-padding;
+  .pi-card__content {
+    display: none;
+  }
+}
+.pi-card--hover {
+  .pi-card__content {
+    display: block;
+  }
+}
 .pi-card__player {
   @extend %pi-card__player;
 }
@@ -28,11 +38,21 @@
 
 .pi-card__date {
 	color: lighten($font-color, 10%);
-
+  padding: $pi-card-content-padding;
   font-size: 0.6em;
 }
 .pi-card__content {
   font-size: 0.8em;
+  position: absolute;
+  padding: $pi-card-content-padding;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: $pi-card-content-hover-bg;
+}
+p.pi-card__content {
+  margin: 0;
 }
 
 .pi-card__gallery {
@@ -48,4 +68,19 @@
 	}
 .pi-card__gallery-item-avatar {
 	max-width: 100%;
+}
+
+.pi-card__thumb {
+  position: relative;
+  min-height: 40px;
+}
+.pi-card__thumb-anchor {
+  display: block;
+}
+$pi-card-content-padding: 5px 5px;
+.pi-card__title {
+  padding: $pi-card-content-padding;
+}
+a.pi-card__title {
+  display: block;
 }
