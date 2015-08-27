@@ -1,0 +1,49 @@
+$pi-breadcrumb-height: 100px;
+.pi-breadcrumb {
+  background-color: $color-gray;
+  color: $color-gray-dark;
+  button, a {
+    color: $color-gray-dark;
+  }
+
+  /*min-height: $pi-breadcrumb-height;*/
+
+  margin-bottom: 1em;
+}
+
+.pi-breadcrumb__wrapper {
+  @include container;
+  /*
+   * responsive ($pi-breadcrumb-height / 2) - $base-font-size
+   */
+
+  @include breakpoint($breakpoint-site){
+    padding-left: 7%;
+  }
+}
+
+.pi-breadcrumb__side {
+  @include span(2 of 5);
+
+}
+
+.pi-breadcrumb__feed {
+  @include span(1 of 5);
+  text-align: center;
+}
+
+.pi-breadcrumb__nav {
+  margin: 5px 0px;
+  @include span(2 of 5 last);
+  text-align: right;
+
+  button {
+    @include border-radius($border-radius-base);
+    float: right;
+    margin-left: 6px;
+  }
+}
+
+.pi-breadcrumb__name {
+  font-size: 1.3em;
+}
