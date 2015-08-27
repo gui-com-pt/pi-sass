@@ -335,6 +335,9 @@ input[type="text"], input[type="email"], input[type="password"], input[type="but
 .pi-form__group {
   @include pi-form-group();
 }
+.pi-form__footer {
+  @include pi-form-group();
+}
 .pi-form__btn-group, .pi-form__groups {
   @include pi-form-group-btn();
 }
