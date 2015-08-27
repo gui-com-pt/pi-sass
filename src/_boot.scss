@@ -1,4 +1,5 @@
 @import "mixins";
+@import "variables";
 
 @import "reset";
 @import "typography";
@@ -6,7 +7,6 @@
 @import "grid";
 @import "button";
 @import "form";
-@import "nav";
 @import "modal";
 @import "table";
 @import "footer";
@@ -14,3 +14,4 @@
 @import "panel";
 @import "list";
 @import "page";
+@import "nav";

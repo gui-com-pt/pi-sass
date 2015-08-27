@@ -1,21 +1,13 @@
 var gulp = require('gulp'),
-    concat = require('gulp-concat'),;
+    concat = require('gulp-concat'),
+    watch = require('gulp-watch'),
+    sass = require('gulp-sass'),
+    requireDir = require('require-dir');
+
+var sassDir = ['./src/*.scss', './src/**/*.scss', './src/**/**/*.scss'];
 
 gulp.task('scripts', function(){
-
-    gulp.src(appModules)
-        .pipe(concat('app.js'))
-        .pipe(gulp.dest('./web/public/dist'));
-
-    gulp.src(['./web/bower/volupio-angular/dist/volupio.js'])
-        .pipe(concat('volupio.js'))
-        .pipe(gulp.dest('./web/public/dist'));
-
-    gulp.src(['./web/bower/volupio-angular/dist/volupio-biddy-angular.js'])
-        .pipe(concat('volupio-biddy-angular.js'))
-        .pipe(gulp.dest('./web/public/dist'));
-
-    gulp.src(['./web/bower/pi-angular/dist/pi-angular.js'])
+   gulp.src(['./web/bower/pi-angular/dist/pi-angular.js'])
       .pipe(concat('pi-angular.js'))
       .pipe(gulp.dest('./web/public/dist'));
 
@@ -23,5 +15,12 @@ gulp.task('scripts', function(){
       .pipe(concat('angular.js'))
       .pipe(gulp.dest('./web/public/dist'));
 });
-
-gulp.task('default', ['demo', 'dist']);
+gulp.task('sass', function () {
+    gulp.src(sassDir)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./release'));
+});
+gulp.task('default', ['sass', 'scripts']);
+gulp.task('watch', function(){
+    gulp.watch(sassDir, ['sass']);
+});

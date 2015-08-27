@@ -1,90 +1,22 @@
-%pi-nav__brand {
-  border: 0;
-  $h: $pi-nav-menu-item-spacing (($pi-nav-height - $pi-nav-font-size) / 2);
-
-  @if $pi-nav-brand-full {
-    $h: $pi-nav-height;
-  }
-
-  > img { height: $h; }
-
-  float: left;
-}
-
 %pi-nav__mobile {
   > li {
     display: block;
   }
 }
 
-%pi-dropdown {
+.pi-nav__brand {
+    border: 0;
+    $h: $pi-nav-menu-item-spacing (($pi-nav-height - $pi-nav-font-size) / 2);
 
-  ul li:hover > ul
-  {
-    display:block
-  }
-  ul a
-  {
-    display:block;
-    text-decoration:none;
-    color: $pi-nav-link;
-
-    padding:0 15px;
-
-    &:hover {
-      color: $color-primary;
+    @if $pi-nav-brand-full {
+      $h: $pi-nav-height;
     }
-  }
 
-  ul li
-  {
-    position:relative;
-    float:left;
-    margin:0;
-    padding:0
-  }
+    > img { height: $pi-nav-height; }
 
-  ul li.current-menu-item
-  {
-
-  }
-
-  ul li:hover
-  {
-
-  }
-
-  ul ul
-  {
-    display:none;
-    position:absolute;
-    top:100%;
-    right:0;
-    padding:0;
-    z-index: $z-index-pi-nav-sub-menu;
-    background-color: $color-gray;
-  }
-
-  ul ul li
-  {
-    float:none;
-    width:200px
-  }
-
-  ul ul a
-  {
-    line-height:120%;
-    padding:$pi-nav-menu-item-spacing (($pi-nav-height - $pi-nav-font-size) / 2)
-  }
-
-  ul ul ul
-  {
-    top:0;
-    left:100%
-  }
+    float: left;
 }
-
-%pi-nav {
+.pi-nav {
   font-weight: $pi-nav-menu-font-weight;
   font-sie: $pi-nav-menu-font-size;
   min-height: $pi-nav-height;
@@ -177,14 +109,78 @@
     }
   }
 
-  @extend %pi-dropdown;
-}
 
-.pi-nav__brand {
-  @extend %pi-nav__brand;
-}
-.pi-nav {
-  @extend %pi-nav;
+  ul li:hover > ul
+  {
+    display:block
+  }
+  ul a
+  {
+    display:block;
+    text-decoration:none;
+    color: $pi-nav-link;
+
+    padding:0 15px;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  ul li
+  {
+    color: $pi-nav-color;
+    position:relative;
+    float:left;
+    margin:0;
+    padding:0
+  }
+
+  ul li.current-menu-item
+  {
+
+  }
+
+  ul li:hover
+  {
+
+  }
+
+  ul ul
+  {
+    display:none;
+    position:absolute;
+    top:100%;
+    right:0;
+    padding:0;
+    z-index: $z-index-pi-nav-sub-menu;
+    background-color: $pi-nav-menu-bg;
+  }
+
+  ul ul li
+  {
+    float:none;
+    width:200px;
+
+  }
+
+  ul ul > li > a, ul ul > li > span
+  {
+    line-height:120%;
+    padding:$pi-nav-menu-item-spacing (($pi-nav-height - $pi-nav-font-size) / 2);
+    display: block;
+
+    &:hover {
+      background-color: $pi-nav-menu-hover-bg;
+      color: $pi-nav-menu-hover-color;
+    }
+  }
+
+  ul ul ul
+  {
+    top:0;
+    left:100%
+  }
 }
 .pi-nav__wrapper {
   background-color: $pi-nav-bg;

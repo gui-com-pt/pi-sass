@@ -1,19 +1,20 @@
 $list-group-margin: 0 0 15px 0;
 $list-group-radius: 4px;
 
-.list-group {
+%list-group {
   padding-left: 0px;
-  margin: $component-padding;
+
 
   > li, > .list-group__item {
     @include clearfix();
+    padding: $component-padding;
+
     > a {
       display: block;
     }
     position: relative;
     display: block;
-    padding: 10px 15px;
-    margin-bottom: -1px;
+    margin-bottom: -1px; /* the border */
     border: solid 1px $color-gray;
     background-color: #fff;
 
@@ -52,6 +53,25 @@ $list-group-radius: 4px;
     border: $color-primary;
   }
 
+}
+.list-group {
+  @extend %list-group;
+}
+@each $item in $component-colors {
+  $name: nth($item, 1);
+  $color: nth($item, 2);
+  $bg: nth($item, 3);
+  $border: nth($item, 4);
+
+  .list-group-#{$name} {
+
+    @extend %list-group;
+
+    > li, > .list-group__item {
+      background-color: $bg;
+      color: $color;
+    }
+  }
 }
 
 .list-group__item > .avatar {

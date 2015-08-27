@@ -1,6 +1,8 @@
-@import "site";
-@import "susy";
-@import "breakpoint";
+@import "../bower_components/susy/sass/susy";
+@import "../bower_components/breakpoint-sass/stylesheets/breakpoint";
+@import "../bower_components/compass-mixins/lib/compass";
+@import "boot";
+
 $breakpoint-small: max-width 480px;
 $breakpoint-medium: 480px 1100px;
 $breakpoint-site: 1100px;
@@ -8,44 +10,44 @@ $breakpoint-site: 1100px;
 	@include container;
 }
 
-.sidebar-left {
-	@include span(1 of 10);
-}
+@include breakpoint($breakpoint-medium) {
+	.sidebar-left {
+		@include span(2 of 5);
+	}
+	.content {
+		@include span(3 of 5 last);
+	}
 
-.sidebar-right {
-	@include span(1 of 10 last);
-}
-.content {
-	@include span(3 of 10);
-	background-color: $color-primary;
-}
-.intro {
-	@include container;
-}
-.intro__content {
-	@include span(1 of 2);
-}
+	.cards {
+		@include span(5 of 5);
+	}
+	.cards-list {
+		@include container;
 
-.intro > .pi-card {
-	@include span(1 of 2 last);
-}
+		> .pi-card {
+				@include span(1 of 2);
 
-.cards {
-	@include span(5 of 10);
-}
-.cards-list {
-	@include container;
-	
-	> .pi-card {
-		@include breakpoint($breakpoint-medium) {
-			@include span(1 of 2);
-			
-			&:nth-child(3n) {
-				@include span(1 of 2 last);
+				&:nth-child(2n) {
+					@include span(1 of 2 last);
+				}
 			}
-		}
+	}
+}
+@include breakpoint($breakpoint-site) {
+	.sidebar-left {
+		@include span(2 of 10);
+	}
+	.content {
+		@include span(3 of 10);
+	}
 
-		@include breakpoint($breakpoint-site) {
+	.cards {
+		@include span(5 of 10 last);
+	}
+	.cards-list {
+		@include container;
+
+		> .pi-card {
 			@include span(1 of 3);
 
 			&:nth-child(3n) {
