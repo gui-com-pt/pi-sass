@@ -4,10 +4,10 @@
   "main": "Gruntfile.js",
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:guilhermegeek/pi-sass.git"
+    "url": "git@github.com:guilhermegeek/pi-sass.git"
   },
   "author": "Guilherme Cardoso",
-  "homepage": "http://guilhermecardoso.pt",
+  "homepage": "http://codigo.ovh",
   "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.5",

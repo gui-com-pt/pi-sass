@@ -54,33 +54,38 @@ $list-group-radius: 4px;
   }
 
 }
-.list-group {
+
+
+.list-group, .pi-list {
   @extend %list-group;
 }
+
+
 @each $item in $component-colors {
   $name: nth($item, 1);
   $color: nth($item, 2);
   $bg: nth($item, 3);
   $border: nth($item, 4);
 
-  .list-group-#{$name} {
+  .list-group-#{$name}, .pi-list-#{$name} {
 
     @extend %list-group;
 
-    > li, > .list-group__item {
+    > li, > .list-group__item, > .pi-list__item {
       background-color: $bg;
       color: $color;
     }
   }
 }
 
-.list-group__item > .avatar {
+.list-group__item > .avatar, .pi-list__item > .avatar {
   max-width: 15%;
   @include avatar-img();
   float: left;
 }
 
-.list-group__item > .button, .list-group__item > .badge {
+.list-group__item > .button, .list-group__item > .badge,
+.pi-list__item > .button, .pi-list__item > .badge {
   float: right;
 }
 
