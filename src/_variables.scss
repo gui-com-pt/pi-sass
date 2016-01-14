@@ -59,14 +59,23 @@ $screen-large: 1400px;
  * Colors
  */
 $color-gray: #f6f6f6;
+$color-gray-text: #ffffff;
 $color-gray-dark: #8d8f9c;
+$color-gray-dark-text: #ffffff;
 $color-gray-light: #b6b2b3;
+$color-gray-light-text: #ffffff;
 $color-primary: #0e57c8;
+$color-primary-text: #ffffff;
 $color-secondary: #01a1c5;
+$color-secondary-text: #ffffff;
 $color-danger: #da3826;
+$color-danger-text: #ffffff;
 $color-info: yellow;
+$color-info-text: #ffffff;
 $color-success: #31b674;
+$color-success-text: #ffffff;
 $color-highlight: $color-danger;
+$color-highlight-text: #ffffff;
 
 $colors: primary secondary danger info highlight;
 $component-colors: (primary $text-color $color-primary $color-primary, secondary $text-color $color-secondary $color-secondary, danger $text-color $color-danger $color-danger, info $text-color $color-info $color-info, highlight $text-color $color-highlight $color-highlight, default $text-color $color-gray $color-gray);

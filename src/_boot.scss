@@ -16,3 +16,12 @@
 @import "page";
 @import "nav";
 @import "breadcrumb";
+
+@mixing color-primary {
+  background-color: $color-primary;
+  color: $color-primary-text;
+}
+@mixing color-secondary {
+  background-color: $color-secondary;
+  color: $color-secondary-text;
+}
