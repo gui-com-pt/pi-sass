@@ -1,53 +1,3 @@
-$grid-columns: 12;
-$grid-max-width: 65em;
-
-$text-color: #000000;
-
-// breakpoints
-$breakpoint-small: max-width 400px;
-$breakpoint-medium: 400px;
-$breakpoint-site: 1200px;
-
-$image-path: '../img' !default;
-
-// SVG background image
-$fallback-extension: 'png' !default;
-$retina-suffix: '@2x';
-
-
-/*
- * Modules
- *
- * Global modules
- */
-$padding-base-vertical:     6px;
-$padding-base-horizontal:   12px;
-
-$padding-large-vertical:    10px;
-$padding-large-horizontal:  16px;
-
-$padding-small-vertical:       1px;
-$padding-small-horizontal:     5px;
-
-$border-radius-small: 15px;
-$border-radius-base: 25px;
-$border-radius-large: 37px;
-
-$component-padding: 15px;
-$project-card-border-radius: $border-radius-small;
-
-/*
- * Compass
- */
-$default-border-radius: $border-radius-base; //override compass default border
-$font-color             : #333;
-// Compass Vertical Rhythm Settings
-$base-font-size: 16px; // Sets the base font size
-$base-line-height: 24px; // Sets the base line height
-$base-font-family: 'Source Sans Pro', sans-serif;
-$round-to-nearest-half-line: true; // Allows compass to round to  multiples of 0.5x line height
-$rhythm-unit: "em"; // Sets rhythm unit to rem. Remove to use default em unit.
-
 /*
 * Screen devices
 */
@@ -64,7 +14,7 @@ $color-gray-dark: #8d8f9c;
 $color-gray-dark-text: #ffffff;
 $color-gray-light: #b6b2b3;
 $color-gray-light-text: #ffffff;
-$color-primary: #0e57c8;
+$color-primary: #13aff0;
 $color-primary-text: #ffffff;
 $color-secondary: #01a1c5;
 $color-secondary-text: #ffffff;
@@ -77,26 +27,6 @@ $color-success-text: #ffffff;
 $color-highlight: $color-danger;
 $color-highlight-text: #ffffff;
 
-$colors: primary secondary danger info highlight;
-$component-colors: (primary $text-color $color-primary $color-primary, secondary $text-color $color-secondary $color-secondary, danger $text-color $color-danger $color-danger, info $text-color $color-info $color-info, highlight $text-color $color-highlight $color-highlight, default $text-color $color-gray $color-gray);
-/*
- * Brand colors */
-$brand-primary: $color-primary;
-$brand-secondary: $color-secondary;
-$brand-danger: $color-danger;
-$brand-info: $color-info;
-$brand-highlight: $color-highlight;
-
-/*
- * Table
- */
-
-$pi-table-tr-bg: transparent;
-$pi-table-tr-color: $text-color;
-$pi-table-alt-tr-bg: $color-gray;
-$pi-table-alt-tr-color: #ffffff;
-
-
 /*
  * Anchors
  */
@@ -107,7 +37,8 @@ $link-hover-color: darken($link-color, 15%);
 /*
  * Typhography
  */
-$text-color: #000000;
+$text-color: #bbbbbb !default;
+$font-color: $text-color;
 $font-size-base:          16px !default;
 $font-size-large:         ceil(($font-size-base * 1.25));
 $font-size-small:         ceil(($font-size-base * 0.85));
@@ -131,6 +62,72 @@ $headings-font-family:    inherit;
 $headings-font-weight:    400;
 $headings-line-height:    1.1;
 $headings-color:          inherit;
+
+$grid-columns: 12;
+$grid-max-width: 65em;
+
+
+// breakpoints
+$breakpoint-small: max-width 400px !default;
+$breakpoint-medium: 400px !default;
+$breakpoint-site: 1200px !default;
+
+$image-path: '../img' !default;
+
+// SVG background image
+$fallback-extension: 'png' !default;
+$retina-suffix: '@2x';
+
+
+/*
+ * Modules
+ *
+ * Global modules
+ */
+$padding-base-vertical:     6px !default;
+$padding-base-horizontal:   12px !default;
+
+$padding-large-vertical:    10px !default;
+$padding-large-horizontal:  16px !default;
+
+$padding-small-vertical:       1px !default;
+$padding-small-horizontal:     5px !default;
+
+$border-radius-small: 15px !default;
+$border-radius-base: 25px !default;
+$border-radius-large: 37px !default;
+
+$component-padding: 15px !default;
+$project-card-border-radius: $border-radius-small !default;
+
+/*
+ * Compass
+ */
+$base-font-family: 'Source Sans Pro', sans-serif;
+$round-to-nearest-half-line: true; // Allows compass to round to  multiples of 0.5x line height
+$rhythm-unit: "em"; // Sets rhythm unit to rem. Remove to use default em unit.
+
+
+$colors: primary secondary danger info highlight;
+$component-colors: (primary $text-color $color-primary $color-primary, secondary $text-color $color-secondary $color-secondary, danger $text-color $color-danger $color-danger, info $text-color $color-info $color-info, highlight $text-color $color-highlight $color-highlight, default $text-color $color-gray $color-gray);
+/*
+ * Brand colors */
+$brand-primary: $color-primary;
+$brand-secondary: $color-secondary;
+$brand-danger: $color-danger;
+$brand-info: $color-info;
+$brand-highlight: $color-highlight;
+
+/*
+ * Table
+ */
+
+$pi-table-tr-bg: transparent;
+$pi-table-tr-color: $text-color;
+$pi-table-alt-tr-bg: $color-gray;
+$pi-table-alt-tr-color: #ffffff;
+
+
 
 /*
  * Form
@@ -163,20 +160,24 @@ $z-index-pi-nav-sub-menu: 5000;
 
 
 //** Global color for active items (e.g., navs or dropdowns).
-$module-active-color: #fff;
-$component-active-color: $module-active-color;
-/** Global background color for active items (e.g., navs or dropdowns) */
-$module-active-bg: $color-primary;
-$component-active-bg: $color-primary;
+$module-active-color: #fff !default;
+$module-active-bg: $color-primary !default;
+$component-bg: #333333 !default;
+$component-color: $text-color !default;
+$component-active-color: $module-active-color !default;
+$component-active-bg: $color-primary !default;
+$component-border-color: #333 !default;
 
 
-$font-size: $base-font-size;
-$line-height: 20px;
-
-$pi-nav-bg: $color-gray;
+$base-font-size: 16px !default;
+$font-size: $base-font-size !default;
+$line-height: 2 !default;
+$body-bg: #171717 !default;
+$pi-nav-bg: $body-bg !default;
+$pi-nav-border-color: #333 !default;
 $pi-nav-brand-full: false !default;
 $pi-nav-height: 40px;
-$pi-nav-link: $color-primary;
+$pi-nav-link: #f1f1f1;
 $pi-nav-color: $pi-nav-link;
 // horizontal space between nav items at top level
 $pi-nav-menu-item-spacing: 10px;
@@ -210,10 +211,9 @@ $button-transition-default: $link-transition-default;
  * Pi form
  */
 $pi-form-footer-bg: #EEEEEE;
-$pi-form-group-bg: #dddddd;
-$pi-form-group-color: #666666;
-$pi-form-group-margin: 15px;
-$pi-form-group-bg: #ffffff;
+$pi-form-group-bg: $component-bg;
+$pi-form-group-color: $component-color;
+$pi-form-group-margin: $component-padding;
 $pi-form-group-control-color: #666666;
 $pi-form-group-control-bg: transparent;
 $pi-form-group-control-outline-color: #ffffff;
@@ -239,27 +239,27 @@ $modal-title-padding:         15px;
 $modal-title-line-height:     $line-height-base;
 
 //** Background color of modal content area
-$modal-content-bg:                             #fff;
+$modal-content-bg:                             #fff !default;
 //** Modal content border color
-$modal-content-border-color:                   rgba(0,0,0,.2);
+$modal-content-border-color:                   rgba(0,0,0,.2) !default;
 //** Modal content border color **for IE8**
-$modal-content-fallback-border-color:          #999;
+$modal-content-fallback-border-color:          #999 !default;
 
 //** Modal backdrop background color
-$modal-backdrop-bg:           #000;
+$modal-backdrop-bg:           #000 !default;
 //** Modal backdrop opacity
-$modal-backdrop-opacity:      .5;
+$modal-backdrop-opacity:      .5 !default;
 //** Modal header border color
-$modal-header-border-color:   #e5e5e5;
+$modal-header-border-color:   #e5e5e5 !default;
 //** Modal footer border color
-$modal-footer-border-color:   $modal-header-border-color;
+$modal-footer-border-color:   $modal-header-border-color !default;
 
-$modal-lg:                    900px;
-$modal-md:                    600px;
-$modal-sm:                    300px;
-$pi-nav-menu-selected-fontweight: 400;
+$modal-lg:                    900px !default;
+$modal-md:                    600px !default;
+$modal-sm:                    300px !default;
+$pi-nav-menu-selected-fontweight: 400 !default;
 
 
 
-$pi-card-content-padding: 5px 5px;
-$pi-card-content-hover-bg: rgba($color-gray, 0.86);
+$pi-card-content-padding: 5px 5px !default;
+$pi-card-content-hover-bg: rgba($color-gray, 0.86) !default;

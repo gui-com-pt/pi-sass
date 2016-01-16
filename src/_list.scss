@@ -15,8 +15,9 @@ $list-group-radius: 4px;
     position: relative;
     display: block;
     margin-bottom: -1px; /* the border */
-    border: solid 1px $color-gray;
-    background-color: #fff;
+    border: solid 1px $component-border-color;
+    background-color: $component-bg;
+    color: $component-color;
 
     &:first-child {
       @include border-radius($list-group-radius);

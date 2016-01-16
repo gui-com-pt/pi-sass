@@ -1,9 +1,16 @@
-%pi-table-data {
+/*
+ * Tables
+ */
+
+%pi-table {
 	width: 100%;
 
 	thead > tr > td {
 		font-weight: bold;
 	}
+
+}
+%pi-table-data {
 
 	tbody > tr {
 		background-color: $pi-table-tr-bg;
@@ -24,4 +31,20 @@
 
 .pi-table {
 	@extend %pi-table;
+}
+
+.pi-table-data {
+	@extend %pi-table;
+  	@extend pi-table-data;
+}
+
+.pi-table__head {
+  $v1: lighten($body-bg, 20%);
+  background-color: $v1;
+  > td {
+    background-color: $v1;
+    padding: 7px;
+    text-align: center;
+    font-weight: 400;
+  }
 }

@@ -18,10 +18,17 @@
 
   padding: $component-padding;
   position: relative;
-
+  background-color: $component-bg;
+  color: $component-color;
+  margin-bottom: $component-padding;
   @include clearfix();
+
   .pi-card__content {
     display: none;
+  }
+
+  &:hover {
+    background-color: lighten($component-bg, 10%);
   }
 }
 
@@ -95,6 +102,7 @@ p.pi-card__content {
 
 .pi-card__thumb-anchor {
   display: block;
+  background-repeat: no-repeat;
 }
 $pi-card-content-padding: 5px 5px;
 
@@ -127,9 +135,9 @@ a.pi-card__title {
   float: right;
   text-align: right;
   position: absolute;
-  right: 0;
+  right: $component-padding;
   top: auto;
-  margin-top: 0;
+  margin-top: 4px;
   width: 20px;
 
 
@@ -168,4 +176,39 @@ a.pi-card__title {
       height: 20px;
     }
   }
+}
+
+.pi-card__tumb {
+    /*max-width: 570px;*/
+    min-height: 40px;
+    min-width: 120px;
+  }
+
+.pi-card__social-list {
+  text-align: center;
+
+  > li, > .pi-card__list-item {
+    text-align:center;
+    white-space:nowrap;
+    display: inline;
+    text-align: center;
+    font-size: 2em;
+  }
+}
+
+.pi-card__thumb-anchor {
+  background-repeat: none;
+  background-size: 100% auto;
+  width: 100%;
+  min-height: 100px;
+}
+
+
+.pi-card__content > p {
+  max-height: $font-size-small * 4;
+  line-height: $font-size-small;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
 }

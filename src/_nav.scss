@@ -18,7 +18,7 @@
 }
 .pi-nav {
   font-weight: $pi-nav-menu-font-weight;
-  font-sie: $pi-nav-menu-font-size;
+  font-size: $pi-nav-menu-font-size;
   min-height: $pi-nav-height;
   /*margin-bottom: $component-padding;*/
   display: -webkit-flex;
@@ -185,6 +185,7 @@
 .pi-nav__wrapper {
   background-color: $pi-nav-bg;
   z-index: $z-index-pi-nav;
+  border-color: $pi-nav-border-color
 }
 .pi-nav__link-active, a.pi-nav__link-active, ul li a.pi-nav__link-active {
   color: $pi-nav-menu-selected-color;
@@ -197,4 +198,17 @@
   top: 0;
   left: 0;
   right: 0;
+  border-width: 0 0 1px;
+}
+
+
+.pi-nav__sub {
+  background-color: lighten($pi-nav-bg, 10%);
+  font-size: 0.75em;
+}
+
+.pi-nav__sub  > .pi-nav {
+  padding: 4px 0px;
+  min-height: auto;
+  font-weight: normal;
 }
