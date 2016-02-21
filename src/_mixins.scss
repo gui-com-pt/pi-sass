@@ -168,6 +168,15 @@
     }
 }
 
+%clearafter {
+    
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+}
+
 %visuallyhidden {
   margin: -1px;
   padding: 0;
